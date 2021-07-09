@@ -110,23 +110,23 @@ class _ListViewPessoasState extends State<ListViewPessoas> {
 
   void deleteCad(BuildContext context, Pessoa pessoa, int position) async {
     if (await showConfirmMessage(
-            context, "Confirma a exclusão deste cadastro de despesa?") ==
+            context, "Confirma a exclusão deste cadastro?") ==
         MensagemConfirmacao.CONFIRM) {
       PessoaHelper.internal().delete(pessoa.id).then((pessoa) async {
         if (pessoa == 1) {
           await showSimpleMessage(
-              context, "Cadastro de despesa excluído com sucesso.");
+              context, "Cadastro excluído com sucesso.");
           setState(() {
             pessoas.removeAt(position);
             Navigator.pop(context);
           });
         } else {
           showSimpleMessage(context,
-              "Não foi possível excluir o cadastro de despesa, tente novamente mais tarde.");
+              "Não foi possível excluir o cadastro , tente novamente mais tarde.");
         }
       }).catchError((onError) {
         showSimpleMessage(context,
-            "Ocorreu o seguinte erro ao excluir o cadastro de despesa: ${onError.message}");
+            "Ocorreu o seguinte erro ao excluir o cadastro : ${onError.message}");
       });
     }
   }

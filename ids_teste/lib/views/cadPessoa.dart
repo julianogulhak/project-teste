@@ -141,7 +141,7 @@ class _CadPessoasState extends State<CadPessoas>
                               Navigator.pop(context, 'alterado');
                             } else {
                               showSimpleMessage(context,
-                                  "Não foi possível atualizar o cadastro da despesa, tente novamente mais tarde.");
+                                  "Não foi possível atualizar o cadastro, tente novamente mais tarde.");
                             }
                           }).catchError((onError) {
                             showSimpleMessage(context,
